@@ -1,4 +1,4 @@
-.PHONY: all clean clean-tests
+.PHONY: all clean clean-passed
 
 SOURCES=$(wildcard impl*.nasm)
 OBJS=$(SOURCES:%.nasm=tests/%.o)
@@ -13,7 +13,7 @@ $(OBJS): tests/%.o:%.nasm
 $(BINARIES): %:%.o tests/test.c
 	gcc -std=c99 tests/test.c $@.o -o $@
 
-$(PASS): %.passed:% $(BINARIES) 
+$(PASS): %.passed:% $(BINARIES)
 	@echo "Testing $(<:tests/%=%)..."
 	@$<
 	@touch $@
@@ -27,4 +27,4 @@ clean-passed:
 	@rm -f $(PASS) tests/passed
 
 clean: clean-passed
-	@rm -f $(OBJS) $(BINARIES) 
+	@rm -f $(OBJS) $(BINARIES)
