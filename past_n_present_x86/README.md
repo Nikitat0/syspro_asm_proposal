@@ -1,7 +1,6 @@
 # Прошлое и настоящее
 
-> **Сложность**: средняя
->
+> **Сложность**: средняя  
 > **ISA**: x86-64
 
 Традиционно собеседование на профиль "Системное программирование" начинается с
@@ -35,5 +34,5 @@
 
 - [Регистр флагов](https://en.wikipedia.org/wiki/FLAGS_register)
 - [Соглашение о вызовах на Linux x86-64](https://en.wikipedia.org/wiki/X86_calling_conventions#System_V_AMD64_ABI)
-- [Справочник по инструкциям x86-64](https://www.felixcloutier.com/x86/)
+- [Справочник инструкциям x86-64](https://www.felixcloutier.com/x86/)
 - [Что такое опкод и мнемоника?](https://stackoverflow.com/questions/17638888/difference-between-opcode-byte-code-mnemonics-machine-code-and-assembly)
