@@ -1,2 +1,2 @@
-/tests/*
-!/tests/test.c
+/tests/*.passed
+/build
