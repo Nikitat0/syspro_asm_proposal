@@ -1,4 +1,4 @@
-.PHONY: all clean-tests clean
+.PHONY: all test clean-tests clean
 
 LIB=tests/lib.h tests/lib.c
 
@@ -7,8 +7,7 @@ SOURCES=$(SAMPLES:%-expected.txt=%.c)
 BINARIES=$(SOURCES:tests/%.c=build/%)
 PASS=$(BINARIES:build/%=tests/%.passed)
 
-all: clean-tests tests/check.passed $(PASS)
-	@echo "All tests passed"
+all: clean-tests test
 
 build:
 	mkdir build
@@ -38,8 +37,11 @@ $(PASS): tests/%.passed: build/% tests/%-input.txt tests/%-expected.txt
 	diff tests/$*-expected.txt tests/$*-actual.txt
 	@touch $@
 
+test: tests/check.passed $(PASS)
+	@echo "All tests passed"
+
 clean-tests:
-	@rm -f $(wildcard tests/*-actual.txt) $(wildcard tests/*.passed)
+	@rm -f tests/*-actual.txt tests/*.passed
 
 clean: clean-tests
 	@rm -rf build/
