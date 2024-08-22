@@ -1,11 +1,11 @@
-EXE = solution_gcc
+EXE = build/main_gcc
 SCRIPT = build.sh
 
 IN = $(wildcard tests/*-input.txt)
 ACT = $(IN:-input.txt=-actual.txt)
 PASS = $(IN:-input.txt=.passed)
 
-.PHONY: all test clean
+.PHONY: all test clean clean-tests
 
 all: clean test
 
@@ -17,11 +17,14 @@ test: $(PASS)
 	@echo "All tests passed"
 
 $(PASS): %.passed: %-input.txt %-expected.txt $(EXE)
+	@echo "Running test $*..."
 	./$(EXE) < $*-input.txt > $*-actual.txt
 	diff $*-expected.txt $*-actual.txt -Z
 	@touch $@
 
-clean:
+clean-tests:
 	@rm -f $(PASS)
-	rm -f $(ACT) $(EXE)
-	rm -rf build
+	@rm -f $(ACT)
+
+clean: clean-tests
+	@rm -rf build

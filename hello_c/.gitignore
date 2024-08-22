@@ -1,2 +1,3 @@
 /build
-/tests/passed
+/tests/*.passed
+/tests/*-actual.txt
