@@ -1,0 +1,3 @@
+/build
+/tests/*.passed
+/tests/*-actual.txt
