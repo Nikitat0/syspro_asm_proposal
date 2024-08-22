@@ -5,7 +5,7 @@ IN = $(wildcard tests/*-input.txt)
 ACT = $(IN:-input.txt=-actual.txt)
 PASS = $(IN:-input.txt=.passed)
 
-.PHONY: all test clean clean-tests
+.PHONY: all test clean-tests
 
 all: clean test
 
