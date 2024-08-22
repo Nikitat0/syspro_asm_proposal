@@ -7,17 +7,19 @@ PASS = $(IN:-input.txt=.passed)
 
 .PHONY: all test clean clean-test
 
-all: clean-test test
+all: clean-tests test
 
-$(EXE): $(SCRIPT)
-	mkdir build/
+build:
+	mkdir -p build
+
+$(EXE): $(SCRIPT) | build
 	bash ./$(SCRIPT) $@
 
 test: $(PASS)
 	@echo "All tests passed"
 
 $(PASS): %.passed: %-input.txt %-expected.txt $(EXE)
-	@echo "Running test $*..."
+	@echo "Running test $(*:tests/%=%)..."
 	./$(EXE) < $*-input.txt > $*-actual.txt
 	diff $*-expected.txt $*-actual.txt -Z
 	@touch $@
