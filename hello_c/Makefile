@@ -17,7 +17,7 @@ main.c.formatted: main.c
 	diff $< $@
 
 $(EXE): $(SCRIPT) main.c.formatted library.h library.nasm | build
-	bash ./$(SCRIPT) $@
+	./$(SCRIPT) $@
 
 test: $(PASS)
 	@echo "All tests passed"
