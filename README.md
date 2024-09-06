@@ -6,6 +6,6 @@
 - [**Традиционная задача**](./traditional/README.md)
 - [**НИИ последовательностей**](./nri_of_sequences/README.md)
 
-## aarch64
+## AArch64
 
 - [**Традиционнейшая задача**](./the_most_traditional/README.md)

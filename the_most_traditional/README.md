@@ -1,7 +1,7 @@
 # Традиционнейшая задача
 
 > **Сложность**: средняя  
-> **ISA**: aarch64
+> **ISA**: AArch64
 
 У кошек 9 жизней, а у студентов всего лишь 7, если считать от сессии до сессии.
 Решите знакомую вам задачу на другой архитектуре по одному разу за каждую вашу
@@ -11,7 +11,7 @@
 
 Предоставьте не менее чем семь реализаций функции `int isEven(uint64_t n)`,
 возвращающей 1, если n чётно, и 0, если n нечётно, на языке ассемблера для
-_aarch64_.
+_AArch64_.
 
 Каждая реализация должна находиться в отдельном файле в корне репозитория с
 именем impl\*.nasm.
@@ -46,5 +46,5 @@ lsl x0, x0, x1
 ## Полезные материалы
 
 - [Инструкции BFM, SBFM, UBFM и их алиасы](https://devblogs.microsoft.com/oldnewthing/20220803-00/?p=106941)
-- [Соглашение о вызовах aarch64](https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst)
-- [Справочник инструкций aarch64](../materials/aarch64_instruction_reference.pdf)
+- [Соглашение о вызовах AArch64](https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst)
+- [Справочник инструкций AArch64](../materials/aarch64_instruction_reference.pdf)
